@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB8BFD231B234EB400C3D4B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8BFD221B234EB400C3D4B9 /* AppDelegate.swift */; };
+		EB8BFD251B234EB400C3D4B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8BFD241B234EB400C3D4B9 /* ViewController.swift */; };
+		EB8BFD281B234EB400C3D4B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8BFD261B234EB400C3D4B9 /* Main.storyboard */; };
+		EB8BFD2A1B234EB400C3D4B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB8BFD291B234EB400C3D4B9 /* Images.xcassets */; };
+		EB8BFD2D1B234EB400C3D4B9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB8BFD2B1B234EB400C3D4B9 /* LaunchScreen.xib */; };
+		EB8BFD391B234EB400C3D4B9 /* KangarooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8BFD381B234EB400C3D4B9 /* KangarooTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB8BFD331B234EB400C3D4B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB8BFD151B234EB400C3D4B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB8BFD1C1B234EB400C3D4B9;
+			remoteInfo = Kangaroo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EB8BFD1D1B234EB400C3D4B9 /* Kangaroo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kangaroo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB8BFD211B234EB400C3D4B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB8BFD221B234EB400C3D4B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EB8BFD241B234EB400C3D4B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EB8BFD271B234EB400C3D4B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EB8BFD291B234EB400C3D4B9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EB8BFD2C1B234EB400C3D4B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		EB8BFD321B234EB400C3D4B9 /* KangarooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KangarooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB8BFD371B234EB400C3D4B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB8BFD381B234EB400C3D4B9 /* KangarooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KangarooTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB8BFD1A1B234EB400C3D4B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB8BFD2F1B234EB400C3D4B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB8BFD141B234EB400C3D4B9 = {
+			isa = PBXGroup;
+			children = (
+				EB8BFD1F1B234EB400C3D4B9 /* Kangaroo */,
+				EB8BFD351B234EB400C3D4B9 /* KangarooTests */,
+				EB8BFD1E1B234EB400C3D4B9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB8BFD1E1B234EB400C3D4B9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB8BFD1D1B234EB400C3D4B9 /* Kangaroo.app */,
+				EB8BFD321B234EB400C3D4B9 /* KangarooTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB8BFD1F1B234EB400C3D4B9 /* Kangaroo */ = {
+			isa = PBXGroup;
+			children = (
+				EB8BFD221B234EB400C3D4B9 /* AppDelegate.swift */,
+				EB8BFD241B234EB400C3D4B9 /* ViewController.swift */,
+				EB8BFD261B234EB400C3D4B9 /* Main.storyboard */,
+				EB8BFD291B234EB400C3D4B9 /* Images.xcassets */,
+				EB8BFD2B1B234EB400C3D4B9 /* LaunchScreen.xib */,
+				EB8BFD201B234EB400C3D4B9 /* Supporting Files */,
+			);
+			path = Kangaroo;
+			sourceTree = "<group>";
+		};
+		EB8BFD201B234EB400C3D4B9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB8BFD211B234EB400C3D4B9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB8BFD351B234EB400C3D4B9 /* KangarooTests */ = {
+			isa = PBXGroup;
+			children = (
+				EB8BFD381B234EB400C3D4B9 /* KangarooTests.swift */,
+				EB8BFD361B234EB400C3D4B9 /* Supporting Files */,
+			);
+			path = KangarooTests;
+			sourceTree = "<group>";
+		};
+		EB8BFD361B234EB400C3D4B9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB8BFD371B234EB400C3D4B9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB8BFD1C1B234EB400C3D4B9 /* Kangaroo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB8BFD3C1B234EB400C3D4B9 /* Build configuration list for PBXNativeTarget "Kangaroo" */;
+			buildPhases = (
+				EB8BFD191B234EB400C3D4B9 /* Sources */,
+				EB8BFD1A1B234EB400C3D4B9 /* Frameworks */,
+				EB8BFD1B1B234EB400C3D4B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kangaroo;
+			productName = Kangaroo;
+			productReference = EB8BFD1D1B234EB400C3D4B9 /* Kangaroo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EB8BFD311B234EB400C3D4B9 /* KangarooTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB8BFD3F1B234EB400C3D4B9 /* Build configuration list for PBXNativeTarget "KangarooTests" */;
+			buildPhases = (
+				EB8BFD2E1B234EB400C3D4B9 /* Sources */,
+				EB8BFD2F1B234EB400C3D4B9 /* Frameworks */,
+				EB8BFD301B234EB400C3D4B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB8BFD341B234EB400C3D4B9 /* PBXTargetDependency */,
+			);
+			name = KangarooTests;
+			productName = KangarooTests;
+			productReference = EB8BFD321B234EB400C3D4B9 /* KangarooTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB8BFD151B234EB400C3D4B9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Jack Cook";
+				TargetAttributes = {
+					EB8BFD1C1B234EB400C3D4B9 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					EB8BFD311B234EB400C3D4B9 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = EB8BFD1C1B234EB400C3D4B9;
+					};
+				};
+			};
+			buildConfigurationList = EB8BFD181B234EB400C3D4B9 /* Build configuration list for PBXProject "Kangaroo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EB8BFD141B234EB400C3D4B9;
+			productRefGroup = EB8BFD1E1B234EB400C3D4B9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB8BFD1C1B234EB400C3D4B9 /* Kangaroo */,
+				EB8BFD311B234EB400C3D4B9 /* KangarooTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB8BFD1B1B234EB400C3D4B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB8BFD281B234EB400C3D4B9 /* Main.storyboard in Resources */,
+				EB8BFD2D1B234EB400C3D4B9 /* LaunchScreen.xib in Resources */,
+				EB8BFD2A1B234EB400C3D4B9 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB8BFD301B234EB400C3D4B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB8BFD191B234EB400C3D4B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB8BFD251B234EB400C3D4B9 /* ViewController.swift in Sources */,
+				EB8BFD231B234EB400C3D4B9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB8BFD2E1B234EB400C3D4B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB8BFD391B234EB400C3D4B9 /* KangarooTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB8BFD341B234EB400C3D4B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB8BFD1C1B234EB400C3D4B9 /* Kangaroo */;
+			targetProxy = EB8BFD331B234EB400C3D4B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EB8BFD261B234EB400C3D4B9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB8BFD271B234EB400C3D4B9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EB8BFD2B1B234EB400C3D4B9 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB8BFD2C1B234EB400C3D4B9 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EB8BFD3A1B234EB400C3D4B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EB8BFD3B1B234EB400C3D4B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB8BFD3D1B234EB400C3D4B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Kangaroo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EB8BFD3E1B234EB400C3D4B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Kangaroo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EB8BFD401B234EB400C3D4B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KangarooTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kangaroo.app/Kangaroo";
+			};
+			name = Debug;
+		};
+		EB8BFD411B234EB400C3D4B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KangarooTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kangaroo.app/Kangaroo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB8BFD181B234EB400C3D4B9 /* Build configuration list for PBXProject "Kangaroo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB8BFD3A1B234EB400C3D4B9 /* Debug */,
+				EB8BFD3B1B234EB400C3D4B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB8BFD3C1B234EB400C3D4B9 /* Build configuration list for PBXNativeTarget "Kangaroo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB8BFD3D1B234EB400C3D4B9 /* Debug */,
+				EB8BFD3E1B234EB400C3D4B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EB8BFD3F1B234EB400C3D4B9 /* Build configuration list for PBXNativeTarget "KangarooTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB8BFD401B234EB400C3D4B9 /* Debug */,
+				EB8BFD411B234EB400C3D4B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB8BFD151B234EB400C3D4B9 /* Project object */;
+}
