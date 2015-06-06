@@ -14,6 +14,8 @@
 		EB8BFD2A1B234EB400C3D4B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB8BFD291B234EB400C3D4B9 /* Images.xcassets */; };
 		EB8BFD2D1B234EB400C3D4B9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB8BFD2B1B234EB400C3D4B9 /* LaunchScreen.xib */; };
 		EB8BFD391B234EB400C3D4B9 /* KangarooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8BFD381B234EB400C3D4B9 /* KangarooTests.swift */; };
+		EBB415521B23846D00050DFC /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415511B23846D00050DFC /* LoadingViewController.swift */; };
+		EBB415541B238BBA00050DFC /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415531B238BBA00050DFC /* ColorConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		EB8BFD321B234EB400C3D4B9 /* KangarooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KangarooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB8BFD371B234EB400C3D4B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB8BFD381B234EB400C3D4B9 /* KangarooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KangarooTests.swift; sourceTree = "<group>"; };
+		EBB415511B23846D00050DFC /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		EBB415531B238BBA00050DFC /* ColorConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		EB2B90051B23560600C6798E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EBB415511B23846D00050DFC /* LoadingViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -110,6 +115,7 @@
 			children = (
 				EB2B90051B23560600C6798E /* View Controllers */,
 				EB8BFD221B234EB400C3D4B9 /* AppDelegate.swift */,
+				EBB415531B238BBA00050DFC /* ColorConstants.swift */,
 				EB8BFD241B234EB400C3D4B9 /* ViewController.swift */,
 				EB8BFD261B234EB400C3D4B9 /* Main.storyboard */,
 				EB8BFD291B234EB400C3D4B9 /* Images.xcassets */,
@@ -297,6 +303,8 @@
 			files = (
 				EB8BFD251B234EB400C3D4B9 /* ViewController.swift in Sources */,
 				EB8BFD231B234EB400C3D4B9 /* AppDelegate.swift in Sources */,
+				EBB415521B23846D00050DFC /* LoadingViewController.swift in Sources */,
+				EBB415541B238BBA00050DFC /* ColorConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
