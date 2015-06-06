@@ -78,6 +78,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EB2B90051B23560600C6798E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		EB8BFD141B234EB400C3D4B9 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +108,7 @@
 		EB8BFD1F1B234EB400C3D4B9 /* Kangaroo */ = {
 			isa = PBXGroup;
 			children = (
+				EB2B90051B23560600C6798E /* View Controllers */,
 				EB8BFD221B234EB400C3D4B9 /* AppDelegate.swift */,
 				EB8BFD241B234EB400C3D4B9 /* ViewController.swift */,
 				EB8BFD261B234EB400C3D4B9 /* Main.storyboard */,

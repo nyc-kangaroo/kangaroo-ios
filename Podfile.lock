@@ -1,10 +1,19 @@
 PODS:
   - EstimoteSDK (3.2.5)
+  - GoogleMaps (1.10.0)
+  - MTBBarcodeScanner (1.6.1)
+  - RSBarcodes_Swift (0.0.6)
 
 DEPENDENCIES:
   - EstimoteSDK (~> 3.2)
+  - GoogleMaps (~> 1.10)
+  - MTBBarcodeScanner (~> 1.6)
+  - RSBarcodes_Swift (~> 0.0.6)
 
 SPEC CHECKSUMS:
   EstimoteSDK: df3ab4ee5f5ee32182a8d918321dc9604eda4829
+  GoogleMaps: 8eafd25b658a6401ca45a185700716c4a9e9edf2
+  MTBBarcodeScanner: beda75d4c1e2750405f62ee53f7a7ee40bf6825b
+  RSBarcodes_Swift: dd8865f5aa24adafb6656b7f3cf0af5fc9fe2297
 
 COCOAPODS: 0.37.2
