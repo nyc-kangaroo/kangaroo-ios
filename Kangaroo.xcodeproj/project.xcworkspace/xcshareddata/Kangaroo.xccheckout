@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>74A9079C-0F1F-40EE-BAA9-5C2B5D17B22F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Kangaroo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EE3F020CF132F9DCE139A4244B24C2BFF6EF9FFF</key>
+		<string>https://github.com/nyc-kangaroo/kangaroo-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Kangaroo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EE3F020CF132F9DCE139A4244B24C2BFF6EF9FFF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/nyc-kangaroo/kangaroo-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EE3F020CF132F9DCE139A4244B24C2BFF6EF9FFF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EE3F020CF132F9DCE139A4244B24C2BFF6EF9FFF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>kangaroo-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>
