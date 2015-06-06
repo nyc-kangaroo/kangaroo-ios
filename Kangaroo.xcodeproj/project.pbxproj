@@ -16,6 +16,8 @@
 		EB8BFD391B234EB400C3D4B9 /* KangarooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8BFD381B234EB400C3D4B9 /* KangarooTests.swift */; };
 		EBB415521B23846D00050DFC /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415511B23846D00050DFC /* LoadingViewController.swift */; };
 		EBB415541B238BBA00050DFC /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415531B238BBA00050DFC /* ColorConstants.swift */; };
+		EBB415561B2393F800050DFC /* StoreSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415551B2393F800050DFC /* StoreSelectViewController.swift */; };
+		EBB415591B2399F800050DFC /* StoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415581B2399F800050DFC /* StoreCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		EB8BFD381B234EB400C3D4B9 /* KangarooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KangarooTests.swift; sourceTree = "<group>"; };
 		EBB415511B23846D00050DFC /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		EBB415531B238BBA00050DFC /* ColorConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
+		EBB415551B2393F800050DFC /* StoreSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreSelectViewController.swift; sourceTree = "<group>"; };
+		EBB415581B2399F800050DFC /* StoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				EBB415511B23846D00050DFC /* LoadingViewController.swift */,
+				EBB415551B2393F800050DFC /* StoreSelectViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				EB2B90051B23560600C6798E /* View Controllers */,
+				EBB415571B2399DE00050DFC /* Views */,
 				EB8BFD221B234EB400C3D4B9 /* AppDelegate.swift */,
 				EBB415531B238BBA00050DFC /* ColorConstants.swift */,
 				EB8BFD241B234EB400C3D4B9 /* ViewController.swift */,
@@ -148,6 +154,14 @@
 				EB8BFD371B234EB400C3D4B9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBB415571B2399DE00050DFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EBB415581B2399F800050DFC /* StoreCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,9 +316,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB8BFD251B234EB400C3D4B9 /* ViewController.swift in Sources */,
+				EBB415561B2393F800050DFC /* StoreSelectViewController.swift in Sources */,
 				EB8BFD231B234EB400C3D4B9 /* AppDelegate.swift in Sources */,
 				EBB415521B23846D00050DFC /* LoadingViewController.swift in Sources */,
 				EBB415541B238BBA00050DFC /* ColorConstants.swift in Sources */,
+				EBB415591B2399F800050DFC /* StoreCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,4 +13,8 @@ extension UIColor {
     class func mainKangarooColor() -> UIColor {
         return UIColor(red: 236/255, green: 135/255, blue: 19/255, alpha: 1)
     }
+    
+    class func darkKangarooColor() -> UIColor {
+        return UIColor(red: 36/255, green: 38/255, blue: 40/255, alpha: 1)
+    }
 }
