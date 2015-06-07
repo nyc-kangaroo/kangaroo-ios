@@ -112,7 +112,22 @@ class CartViewController: UIViewController, PKPaymentAuthorizationViewController
     }
     
     func paymentAuthorizationViewController(controller: PKPaymentAuthorizationViewController!, didAuthorizePayment payment: PKPayment!, completion: ((PKPaymentAuthorizationStatus) -> Void)!) {
-        completion(PKPaymentAuthorizationStatus.Success)
+        let url = "http://45.33.83.229:3001/checkout/\(self.store.place!.name)/\(ShoppingCart.sharedInstance().getProducts()[0].quantity)"
+        let encodedUrlString = url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        let encodedUrl = NSURL(string: encodedUrlString)!
+        
+        let request = NSMutableURLRequest(URL: encodedUrl)
+        request.HTTPMethod = "GET"
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
+            for product in ShoppingCart.sharedInstance().getProducts() {
+                ShoppingCart.sharedInstance().removeProductAtIndex(0)
+            }
+            
+            completion(PKPaymentAuthorizationStatus.Success)
+            
+            self.navigationController?.popViewControllerAnimated(true)
+        }
     }
     
     func paymentAuthorizationViewControllerDidFinish(controller: PKPaymentAuthorizationViewController!) {

@@ -84,10 +84,12 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func processBarcode(notification: NSNotification) {
         if let barcode = notification.object as? String {
+            println("\(barcode)")
             if let products = self.store.products {
                 for product in products {
                     if product.upc == barcode {
-                        println("\(barcode)")
+                        ShoppingCart.sharedInstance().addProduct(product)
+                        self.performSegueWithIdentifier("cartSegue", sender: nil)
                         break
                     }
                 }
