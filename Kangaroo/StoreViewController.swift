@@ -23,6 +23,8 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        self.tableView.backgroundColor = UIColor.darkKangarooColor()
        
         self.navigationBar.layer.shadowRadius = 2
         self.navigationBar.layer.shadowOffset = CGSizeMake(0, 2)
@@ -44,6 +46,10 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBAction func barcodeButton(sender: AnyObject) {
         
+    }
+    
+    @IBAction func cartButton(sender: AnyObject) {
+        self.performSegueWithIdentifier("cartSegue", sender: nil)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
