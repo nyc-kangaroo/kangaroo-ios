@@ -69,6 +69,7 @@
 		EBB4156B1B2419E200050DFC /* Kangaroo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Kangaroo.entitlements; sourceTree = "<group>"; };
 		EBCA525E1B24471F00760CA1 /* BarcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
 		EBEBD76E1B2452550068CB98 /* KangarooAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KangarooAlertView.swift; sourceTree = "<group>"; };
+		EBEBD7721B2488F00068CB98 /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EstimoteSDK.framework; path = Pods/EstimoteSDK/EstimoteSDK/EstimoteSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +94,7 @@
 		4B30875485E692D4A08F967D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EBEBD7721B2488F00068CB98 /* EstimoteSDK.framework */,
 				18F5E91C5610B499211FE3AD /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -507,6 +509,10 @@
 				CODE_SIGN_ENTITLEMENTS = Kangaroo/Kangaroo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/EstimoteSDK/EstimoteSDK",
+				);
 				INFOPLIST_FILE = Kangaroo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -522,6 +528,10 @@
 				CODE_SIGN_ENTITLEMENTS = Kangaroo/Kangaroo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/EstimoteSDK/EstimoteSDK",
+				);
 				INFOPLIST_FILE = Kangaroo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

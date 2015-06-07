@@ -50,14 +50,25 @@ class CartViewController: UIViewController, PKPaymentAuthorizationViewController
     
     func updatePrice(notification: NSNotification?) {
         var price = 0.0
+        var items = 0
         
         for product in ShoppingCart.sharedInstance().getProducts() {
             price += Double(product.price! * Float(product.quantity))
+            items += product.quantity
         }
         
         price = round(price * 100) / 100
         
         self.priceLabel.text = "$\(price)"
+        
+        let totalAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        let attributedTotal = NSMutableAttributedString(string: "Total", attributes: totalAttributes)
+        
+        let quantityAttributes = [NSForegroundColorAttributeName: UIColor(red: 103/255, green: 108/255, blue: 114/255, alpha: 1)]
+        let attributedQuantity = NSAttributedString(string: " – \(items) items", attributes: quantityAttributes)
+        
+        attributedTotal.appendAttributedString(attributedQuantity)
+        self.totalLabel.attributedText = attributedTotal
     }
     
     @IBAction func backButton(sender: AnyObject) {
