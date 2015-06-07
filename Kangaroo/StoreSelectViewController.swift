@@ -20,6 +20,16 @@ class StoreSelectViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.stores?.sort({ (s1, s2) -> Bool in
+            let l1 = CLLocation(latitude: s1.place!.coordinate.latitude, longitude: s1.place!.coordinate.longitude)
+            let l2 = CLLocation(latitude: s2.place!.coordinate.latitude, longitude: s2.place!.coordinate.longitude)
+            
+            let d1 = round(l1.distanceFromLocation(kangarooLocationManager!.location) / 0.9144)
+            let d2 = round(l2.distanceFromLocation(kangarooLocationManager!.location) / 0.9144)
+            
+            return d1 < d2
+        })
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -44,7 +54,7 @@ class StoreSelectViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCellWithIdentifier("StoreCell", forIndexPath: indexPath) as! StoreCell
         
         if let stores = stores {
-            cell.configureWithStore(stores[indexPath.row], logo: UIImage(named: "Grocery")!)
+            cell.configureWithStore(stores[indexPath.row], logo: UIImage(named: "Grocery-Large")!)
         }
         
         return cell

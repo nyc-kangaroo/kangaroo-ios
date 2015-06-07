@@ -31,9 +31,9 @@ class StoreCell: UITableViewCell {
             if let place = store.place {
                 let location = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
                 let distance = locationManager.location.distanceFromLocation(location)
-                let rounded = round(round(distance * 100) / 100 / 1609.34 * 100) / 100
+                let rounded = Int(round(distance / 0.9144))
                 
-                self.distance.text = "\(rounded) mi"
+                self.distance.text = "\(rounded) yds"
             }
         }
     }

@@ -14,6 +14,7 @@ import UIKit
 class StoreViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var navigationBar: UIView!
+    @IBOutlet var nameLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var cornerButton: UIButton!
     
@@ -24,6 +25,8 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.nameLabel.text = store.place!.name
         
         self.tableView.backgroundColor = UIColor.darkKangarooColor()
        
@@ -125,6 +128,14 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         } else {
             println("Error retrieving UITableViewCell type")
             return UITableViewCell()
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? CartViewController {
+            vc.store = store
+        } else {
+            println("Error: Unknown segue identifier: \(segue.identifier)")
         }
     }
     

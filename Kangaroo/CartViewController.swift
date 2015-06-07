@@ -13,7 +13,9 @@ import UIKit
 class CartViewController: UIViewController, PKPaymentAuthorizationViewControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     
     var payController: PKPaymentAuthorizationViewController?
+    var store: Store!
     
+    @IBOutlet var nameLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var totalLabel: UILabel!
     @IBOutlet var priceLabel: UILabel!
@@ -22,6 +24,8 @@ class CartViewController: UIViewController, PKPaymentAuthorizationViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.nameLabel.text = self.store.place!.name
         
         self.tableView.dataSource = self
         self.tableView.delegate = self

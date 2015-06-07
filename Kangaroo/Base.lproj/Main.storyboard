@@ -26,7 +26,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.92549019607843142" green="0.52941176470588236" blue="0.074509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.92941176470588238" green="0.57647058823529407" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="C9N-5b-aZj" secondAttribute="centerY" id="CLh-Fp-rB0"/>
                             <constraint firstAttribute="centerX" secondItem="C9N-5b-aZj" secondAttribute="centerX" id="IwL-th-XZp"/>
@@ -133,7 +133,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.18823528289794922" green="0.19607836008071899" blue="0.2078431248664856" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.10588235294117647" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="distance" destination="Iny-0d-rjU" id="zJH-VX-a8s"/>
                                             <outlet property="icon" destination="JXC-IO-kqs" id="67n-sb-qN6"/>
@@ -145,7 +145,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.18823529411764706" green="0.19607843137254902" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.10588235294117647" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bmQ-K2-edm" firstAttribute="leading" secondItem="we0-od-Dbe" secondAttribute="leading" constant="20" id="97a-E9-epU"/>
                             <constraint firstItem="cBa-ob-zwt" firstAttribute="top" secondItem="we0-od-Dbe" secondAttribute="topMargin" constant="20" id="Ktu-u8-gaz"/>
@@ -202,7 +202,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.91764705882352937" green="0.57647058823529407" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91764705882352937" green="0.57647058823529407" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="QCM-0x-LWc" firstAttribute="top" secondItem="v8d-7v-QuB" secondAttribute="top" id="1aE-SS-ANs"/>
                                     <constraint firstAttribute="trailing" secondItem="QCM-0x-LWc" secondAttribute="trailing" id="2qQ-Xd-4ZB"/>
@@ -527,7 +527,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.91764705879999997" green="0.57647058819999997" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91764705882352937" green="0.57647058823529407" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="f7t-fy-JTD" secondAttribute="trailing" id="2Jx-sN-6Ee"/>
                                     <constraint firstAttribute="centerX" secondItem="vxe-G9-ulL" secondAttribute="centerX" id="2Z0-qq-RLf"/>
@@ -714,7 +714,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.18823529411764706" green="0.19607843137254902" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.10588235294117647" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="nameLabel" destination="lu9-w0-GhS" id="4Fs-W2-qql"/>
                                             <outlet property="priceLabel" destination="cJJ-rv-bSK" id="WCr-NP-qOQ"/>
@@ -750,6 +750,7 @@
                     </view>
                     <connections>
                         <outlet property="checkoutButton" destination="VyQ-Sl-oPN" id="yyE-bF-TSy"/>
+                        <outlet property="nameLabel" destination="vxe-G9-ulL" id="Z38-oV-e9q"/>
                         <outlet property="priceLabel" destination="gZo-2Y-8gP" id="HhN-Ff-buq"/>
                         <outlet property="tableView" destination="0gc-HA-yOa" id="EDy-T0-BgQ"/>
                         <outlet property="totalLabel" destination="fuh-eR-6tq" id="XQa-bP-y0l"/>
