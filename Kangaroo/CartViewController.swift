@@ -32,16 +32,23 @@ class CartViewController: UIViewController, PKPaymentAuthorizationViewController
         
         self.checkoutButton.backgroundColor = UIColor(red: 33/255, green: 34/255, blue: 35/255, alpha: 1)
         
+        self.updatePrice(nil)
+        
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "deleteProduct:", name: "KGDeleteProduct", object: nil)
         notificationCenter.addObserver(self, selector: "updatePrice:", name: "KGPriceUpdated", object: nil)
     }
     
     func deleteProduct(notification: NSNotification) {
-        println(notification.object)
+        if let index = notification.object as? Int {
+            ShoppingCart.sharedInstance().removeProductAtIndex(index)
+            self.tableView.reloadData()
+        } else {
+            println("Error retrieving item index")
+        }
     }
     
-    func updatePrice(notification: NSNotification) {
+    func updatePrice(notification: NSNotification?) {
         var price = 0.0
         
         for product in ShoppingCart.sharedInstance().getProducts() {
@@ -82,7 +89,7 @@ class CartViewController: UIViewController, PKPaymentAuthorizationViewController
         objects.append(totalItem)
         
         request.paymentSummaryItems = objects
-        request.supportedNetworks = [PKPaymentNetworkVisa]
+        request.supportedNetworks = [PKPaymentNetworkVisa, PKPaymentNetworkMasterCard, PKPaymentNetworkAmex]
         
         self.payController = PKPaymentAuthorizationViewController(paymentRequest: request)
         self.payController!.delegate = self
@@ -106,6 +113,7 @@ class CartViewController: UIViewController, PKPaymentAuthorizationViewController
         
         let cell = tableView.dequeueReusableCellWithIdentifier("ProductCell", forIndexPath: indexPath) as! ProductCell
         cell.configureWithProduct(product)
+        cell.index = indexPath.row
         
         return cell
     }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4622D04901BB64ADF08C810B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F5E91C5610B499211FE3AD /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EB8BFD231B234EB400C3D4B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8BFD221B234EB400C3D4B9 /* AppDelegate.swift */; };
-		EB8BFD251B234EB400C3D4B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8BFD241B234EB400C3D4B9 /* ViewController.swift */; };
 		EB8BFD281B234EB400C3D4B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8BFD261B234EB400C3D4B9 /* Main.storyboard */; };
 		EB8BFD2A1B234EB400C3D4B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB8BFD291B234EB400C3D4B9 /* Images.xcassets */; };
 		EB8BFD2D1B234EB400C3D4B9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB8BFD2B1B234EB400C3D4B9 /* LaunchScreen.xib */; };
@@ -48,7 +47,6 @@
 		EB8BFD1D1B234EB400C3D4B9 /* Kangaroo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kangaroo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB8BFD211B234EB400C3D4B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB8BFD221B234EB400C3D4B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EB8BFD241B234EB400C3D4B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EB8BFD271B234EB400C3D4B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB8BFD291B234EB400C3D4B9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EB8BFD2C1B234EB400C3D4B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 				EB8BFD221B234EB400C3D4B9 /* AppDelegate.swift */,
 				EBB415531B238BBA00050DFC /* ColorConstants.swift */,
 				EBB4155A1B23B3D100050DFC /* Common.swift */,
-				EB8BFD241B234EB400C3D4B9 /* ViewController.swift */,
 				EB8BFD261B234EB400C3D4B9 /* Main.storyboard */,
 				EB8BFD291B234EB400C3D4B9 /* Images.xcassets */,
 				EB8BFD2B1B234EB400C3D4B9 /* LaunchScreen.xib */,
@@ -365,7 +362,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBB4155D1B23BB0200050DFC /* StoreViewController.swift in Sources */,
-				EB8BFD251B234EB400C3D4B9 /* ViewController.swift in Sources */,
 				EBB415561B2393F800050DFC /* StoreSelectViewController.swift in Sources */,
 				EBB415601B23D3E300050DFC /* Store.swift in Sources */,
 				EB8BFD231B234EB400C3D4B9 /* AppDelegate.swift in Sources */,

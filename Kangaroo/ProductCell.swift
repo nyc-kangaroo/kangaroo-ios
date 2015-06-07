@@ -67,6 +67,7 @@ class ProductCell: UITableViewCell {
         if let index = self.index {
             let notificationCenter = NSNotificationCenter.defaultCenter()
             notificationCenter.postNotificationName("KGDeleteProduct", object: index)
+            notificationCenter.postNotificationName("KGUpdatePrice", object: index)
         }
     }
 }

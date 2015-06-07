@@ -72,7 +72,6 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         if let product = notification.object as? Product {
             ShoppingCart.sharedInstance().addProduct(product)
-            println(ShoppingCart.sharedInstance().getProducts().count)
         }
     }
     

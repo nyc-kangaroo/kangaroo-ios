@@ -36,7 +36,5 @@ class StoreCell: UITableViewCell {
                 self.distance.text = "\(rounded) mi"
             }
         }
-        
-        println("\(store.place?.name): \(store.place?.placeID)")
     }
 }
