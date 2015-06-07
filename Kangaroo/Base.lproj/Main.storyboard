@@ -385,6 +385,7 @@
                     </view>
                     <connections>
                         <outlet property="cornerButton" destination="Wo6-VT-3uf" id="e5o-FY-pW9"/>
+                        <outlet property="nameLabel" destination="zl4-04-PGi" id="KLy-A7-4Gr"/>
                         <outlet property="navigationBar" destination="v8d-7v-QuB" id="ogV-Ve-hOt"/>
                         <outlet property="tableView" destination="Chd-jd-SkI" id="omQ-rR-WcE"/>
                         <segue destination="xtP-RO-iMo" kind="show" identifier="cartSegue" id="cMi-3q-VNC"/>
@@ -792,6 +793,6 @@
         <image name="Trash" width="51" height="61"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JtK-mO-yfZ"/>
+        <segue reference="DoA-Z0-bwe"/>
     </inferredMetricsTieBreakers>
 </document>

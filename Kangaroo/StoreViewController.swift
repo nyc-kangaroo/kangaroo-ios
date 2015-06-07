@@ -29,7 +29,7 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.nameLabel.text = store.place!.name
         
         self.tableView.backgroundColor = UIColor.darkKangarooColor()
-       
+        
         self.navigationBar.layer.shadowRadius = 2
         self.navigationBar.layer.shadowOffset = CGSizeMake(0, 2)
         self.navigationBar.layer.shadowColor = UIColor.blackColor().CGColor
