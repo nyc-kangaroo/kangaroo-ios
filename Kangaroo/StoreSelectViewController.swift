@@ -24,10 +24,16 @@ class StoreSelectViewController: UIViewController, UITableViewDelegate, UITableV
         self.tableView.dataSource = self
         
         self.tableView.backgroundColor = UIColor.darkKangarooColor()
+        self.tableView.tableFooterView = UIView.new()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        if let stores = stores {
+            return stores.count
+        } else {
+            println("Error retrieving stores")
+            return 0
+        }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

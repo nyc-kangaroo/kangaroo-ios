@@ -22,6 +22,9 @@
 		EBB4155D1B23BB0200050DFC /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB4155C1B23BB0200050DFC /* StoreViewController.swift */; };
 		EBB415601B23D3E300050DFC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB4155F1B23D3E300050DFC /* Store.swift */; };
 		EBB415621B23D40C00050DFC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415611B23D40C00050DFC /* Product.swift */; };
+		EBB415641B23F42200050DFC /* PromotedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415631B23F42200050DFC /* PromotedCell.swift */; };
+		EBB415661B24049B00050DFC /* Mozart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415651B24049B00050DFC /* Mozart.swift */; };
+		EBB415681B24062A00050DFC /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415671B24062A00050DFC /* CartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		EBB4155C1B23BB0200050DFC /* StoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		EBB4155F1B23D3E300050DFC /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		EBB415611B23D40C00050DFC /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		EBB415631B23F42200050DFC /* PromotedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotedCell.swift; sourceTree = "<group>"; };
+		EBB415651B24049B00050DFC /* Mozart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mozart.swift; sourceTree = "<group>"; };
+		EBB415671B24062A00050DFC /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 				EBB415511B23846D00050DFC /* LoadingViewController.swift */,
 				EBB415551B2393F800050DFC /* StoreSelectViewController.swift */,
 				EBB4155C1B23BB0200050DFC /* StoreViewController.swift */,
+				EBB415671B24062A00050DFC /* CartViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -138,6 +145,7 @@
 				EB8BFD291B234EB400C3D4B9 /* Images.xcassets */,
 				EB8BFD2B1B234EB400C3D4B9 /* LaunchScreen.xib */,
 				EB8BFD201B234EB400C3D4B9 /* Supporting Files */,
+				EBB415651B24049B00050DFC /* Mozart.swift */,
 			);
 			path = Kangaroo;
 			sourceTree = "<group>";
@@ -171,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				EBB415581B2399F800050DFC /* StoreCell.swift */,
+				EBB415631B23F42200050DFC /* PromotedCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -341,7 +350,10 @@
 				EBB415601B23D3E300050DFC /* Store.swift in Sources */,
 				EB8BFD231B234EB400C3D4B9 /* AppDelegate.swift in Sources */,
 				EBB415521B23846D00050DFC /* LoadingViewController.swift in Sources */,
+				EBB415681B24062A00050DFC /* CartViewController.swift in Sources */,
 				EBB415541B238BBA00050DFC /* ColorConstants.swift in Sources */,
+				EBB415641B23F42200050DFC /* PromotedCell.swift in Sources */,
+				EBB415661B24049B00050DFC /* Mozart.swift in Sources */,
 				EBB415621B23D40C00050DFC /* Product.swift in Sources */,
 				EBB415591B2399F800050DFC /* StoreCell.swift in Sources */,
 				EBB4155B1B23B3D100050DFC /* Common.swift in Sources */,

@@ -11,7 +11,7 @@ import UIKit
 extension UIColor {
     
     class func mainKangarooColor() -> UIColor {
-        return UIColor(red: 236/255, green: 135/255, blue: 19/255, alpha: 1)
+        return UIColor(red: 234/255, green: 147/255, blue: 47/255, alpha: 1)
     }
     
     class func darkKangarooColor() -> UIColor {

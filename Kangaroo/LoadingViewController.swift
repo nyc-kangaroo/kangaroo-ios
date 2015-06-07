@@ -15,7 +15,9 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
     
     var stores: [Store]?
     
-    var potentialRequests = 2
+    var retrievedLocation = false
+    
+    var potentialRequests = 1
     var finishedRequests = 0
     
     override func viewDidLoad() {
@@ -42,35 +44,52 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
                         if contains(place.types as! [String], "grocery_or_supermarket") {
                             places.append(place)
                             self.potentialRequests += 1
+                            self.getPlaceInfo(place)
                         }
                     }
                 }
             }
-            
-            for place in places {
-                let url = NSURL(string: "http://45.33.83.229:3001/store/\(place.placeID)")!
-                let request = NSURLRequest(URL: url)
-                
-                NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
-                    let json = JSON(data)
-                    let store = Store(json: json, place: place)
-                    self.stores?.append(store)
-                    
-                    self.finishedRequests += 1
-                })
-            }
-            
-            self.performSegueWithIdentifier("storeSelectSegue", sender: nil)
         }
     }
     
+    func getPlaceInfo(place: GMSPlace) {
+        let url = NSURL(string: "http://45.33.83.229:3001/store/\(place.placeID)")!
+        let request = NSURLRequest(URL: url)
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
+            let json = JSON(data)
+            let store = Store(json: json, place: place)
+            self.stores?.append(store)
+            
+            self.finishedRequest()
+        })
+    }
+    
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        self.finishedRequest()
+        kangarooLocationManager?.stopUpdatingLocation()
+        kangarooLocationManager?.delegate = nil
+    }
+    
+    func finishedRequest() {
         self.finishedRequests += 1
+        
+        if self.potentialRequests == self.finishedRequests {
+            if let stores = stores {
+                if stores.count > 1 {
+                    self.performSegueWithIdentifier("storeSelectSegue", sender: nil)
+                } else {
+                    self.performSegueWithIdentifier("storeSegue", sender: nil)
+                }
+            }
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let vc = segue.destinationViewController as? StoreSelectViewController {
             vc.stores = self.stores
+        } else if let vc = segue.destinationViewController as? StoreViewController {
+            vc.store = self.stores?.first
         } else {
             println("Error: Unknown segue - \(segue.identifier)")
         }
