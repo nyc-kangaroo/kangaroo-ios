@@ -21,20 +21,22 @@ class StoreCell: UITableViewCell {
     override func awakeFromNib() {
     }
     
-    func configureWithPlace(place: GMSPlace, logo: UIImage) {
+    func configureWithStore(store: Store, logo: UIImage) {
         self.logo.image = logo
-        self.name.text = place.name
+        self.name.text = store.place?.name
         self.icon.image = UIImage(named: "Grocery")
         self.type.text = "grocery"
         
-        if let locationManager = locationManager {
-            let location = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-            let distance = locationManager.location.distanceFromLocation(location)
-            let rounded = round(round(distance * 100) / 100 / 1609.34 * 100) / 100
-            
-            self.distance.text = "\(rounded) mi"
+        if let locationManager = kangarooLocationManager {
+            if let place = store.place {
+                let location = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+                let distance = locationManager.location.distanceFromLocation(location)
+                let rounded = round(round(distance * 100) / 100 / 1609.34 * 100) / 100
+                
+                self.distance.text = "\(rounded) mi"
+            }
         }
         
-        println("\(place.name): \(place.placeID)")
+        println("\(store.place?.name): \(store.place?.placeID)")
     }
 }

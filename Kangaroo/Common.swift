@@ -9,4 +9,4 @@
 import CoreLocation
 import Foundation
 
-var locationManager: CLLocationManager?
+var kangarooLocationManager: CLLocationManager?

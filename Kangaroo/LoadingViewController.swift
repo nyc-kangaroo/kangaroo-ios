@@ -8,17 +8,22 @@
 
 import GoogleMaps
 import Foundation
+import SwiftyJSON
 import UIKit
 
-class LoadingViewController: UIViewController {
+class LoadingViewController: UIViewController, CLLocationManagerDelegate {
     
-    var stores: [GMSPlace]?
+    var stores: [Store]?
+    
+    var potentialRequests = 2
+    var finishedRequests = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager = CLLocationManager()
-        locationManager?.startUpdatingLocation()
+        kangarooLocationManager = CLLocationManager()
+        kangarooLocationManager?.delegate = self
+        kangarooLocationManager?.startUpdatingLocation()
         
         GMSPlacesClient.sharedClient().currentPlaceWithCallback { (possiblePlaces, error) -> Void in
             if let error = error {
@@ -26,7 +31,8 @@ class LoadingViewController: UIViewController {
                 return
             }
             
-            self.stores = [GMSPlace]()
+            self.stores = [Store]()
+            var places = [GMSPlace]()
             
             if let possiblePlaces = possiblePlaces {
                 for possiblePlace in possiblePlaces.likelihoods {
@@ -34,14 +40,32 @@ class LoadingViewController: UIViewController {
                         let place = possiblePlace.place
                         
                         if contains(place.types as! [String], "grocery_or_supermarket") {
-                            self.stores?.append(place)
+                            places.append(place)
+                            self.potentialRequests += 1
                         }
                     }
                 }
             }
             
+            for place in places {
+                let url = NSURL(string: "http://45.33.83.229:3001/store/\(place.placeID)")!
+                let request = NSURLRequest(URL: url)
+                
+                NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
+                    let json = JSON(data)
+                    let store = Store(json: json, place: place)
+                    self.stores?.append(store)
+                    
+                    self.finishedRequests += 1
+                })
+            }
+            
             self.performSegueWithIdentifier("storeSelectSegue", sender: nil)
         }
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        self.finishedRequests += 1
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

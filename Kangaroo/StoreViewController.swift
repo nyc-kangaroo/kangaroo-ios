@@ -14,12 +14,10 @@ class StoreViewController: UIViewController {
     
     @IBOutlet var cornerButton: UIButton!
     
-    var store: GMSPlace?
+    var store: Store?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        println(self.store?.name)
         
         self.cornerButton.backgroundColor = UIColor.mainKangarooColor()
         self.cornerButton.layer.cornerRadius = 28

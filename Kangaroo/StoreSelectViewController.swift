@@ -14,8 +14,8 @@ class StoreSelectViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet var tableView: UITableView!
     
-    var stores: [GMSPlace]?
-    var storeToSend: GMSPlace?
+    var stores: [Store]?
+    var storeToSend: Store?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class StoreSelectViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCellWithIdentifier("StoreCell", forIndexPath: indexPath) as! StoreCell
         
         if let stores = stores {
-            cell.configureWithPlace(stores[indexPath.row], logo: UIImage(named: "Grocery")!)
+            cell.configureWithStore(stores[indexPath.row], logo: UIImage(named: "Grocery")!)
         }
         
         return cell
