@@ -18,6 +18,8 @@
 		EBB415541B238BBA00050DFC /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415531B238BBA00050DFC /* ColorConstants.swift */; };
 		EBB415561B2393F800050DFC /* StoreSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415551B2393F800050DFC /* StoreSelectViewController.swift */; };
 		EBB415591B2399F800050DFC /* StoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415581B2399F800050DFC /* StoreCell.swift */; };
+		EBB4155B1B23B3D100050DFC /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB4155A1B23B3D100050DFC /* Common.swift */; };
+		EBB4155D1B23BB0200050DFC /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB4155C1B23BB0200050DFC /* StoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		EBB415531B238BBA00050DFC /* ColorConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 		EBB415551B2393F800050DFC /* StoreSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreSelectViewController.swift; sourceTree = "<group>"; };
 		EBB415581B2399F800050DFC /* StoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreCell.swift; sourceTree = "<group>"; };
+		EBB4155A1B23B3D100050DFC /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		EBB4155C1B23BB0200050DFC /* StoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 			children = (
 				EBB415511B23846D00050DFC /* LoadingViewController.swift */,
 				EBB415551B2393F800050DFC /* StoreSelectViewController.swift */,
+				EBB4155C1B23BB0200050DFC /* StoreViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 				EBB415571B2399DE00050DFC /* Views */,
 				EB8BFD221B234EB400C3D4B9 /* AppDelegate.swift */,
 				EBB415531B238BBA00050DFC /* ColorConstants.swift */,
+				EBB4155A1B23B3D100050DFC /* Common.swift */,
 				EB8BFD241B234EB400C3D4B9 /* ViewController.swift */,
 				EB8BFD261B234EB400C3D4B9 /* Main.storyboard */,
 				EB8BFD291B234EB400C3D4B9 /* Images.xcassets */,
@@ -315,12 +321,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBB4155D1B23BB0200050DFC /* StoreViewController.swift in Sources */,
 				EB8BFD251B234EB400C3D4B9 /* ViewController.swift in Sources */,
 				EBB415561B2393F800050DFC /* StoreSelectViewController.swift in Sources */,
 				EB8BFD231B234EB400C3D4B9 /* AppDelegate.swift in Sources */,
 				EBB415521B23846D00050DFC /* LoadingViewController.swift in Sources */,
 				EBB415541B238BBA00050DFC /* ColorConstants.swift in Sources */,
 				EBB415591B2399F800050DFC /* StoreCell.swift in Sources */,
+				EBB4155B1B23B3D100050DFC /* Common.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

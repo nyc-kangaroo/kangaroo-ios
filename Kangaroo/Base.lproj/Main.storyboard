@@ -133,6 +133,13 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.18823528289794922" green="0.19607836008071899" blue="0.2078431248664856" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="distance" destination="Iny-0d-rjU" id="zJH-VX-a8s"/>
+                                            <outlet property="icon" destination="JXC-IO-kqs" id="67n-sb-qN6"/>
+                                            <outlet property="logo" destination="YLn-fR-Y8S" id="76q-KC-BQw"/>
+                                            <outlet property="name" destination="8ia-wr-z2y" id="4ta-3b-GVF"/>
+                                            <outlet property="type" destination="hoW-Nq-2he" id="kBo-3H-zPz"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -149,11 +156,49 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="bmQ-K2-edm" id="6FA-eV-HSj"/>
+                        <segue destination="Oc7-6s-j7P" kind="show" identifier="storeSegue" id="DoA-Z0-bwe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ILc-gK-VnK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1902" y="288"/>
+        </scene>
+        <!--Store View Controller-->
+        <scene sceneID="b6P-2e-bGT">
+            <objects>
+                <viewController id="Oc7-6s-j7P" customClass="StoreViewController" customModule="Kangaroo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oc0-ay-Tlg"/>
+                        <viewControllerLayoutGuide type="bottom" id="Smv-GI-uPx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ogR-mj-arc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wo6-VT-3uf">
+                                <rect key="frame" x="520" y="512" width="56" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="ATR-Zv-0N3"/>
+                                    <constraint firstAttribute="height" constant="56" id="uVb-iU-5xB"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.11764705882352941" green="0.12549019607843137" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Wo6-VT-3uf" secondAttribute="trailing" constant="24" id="UHV-Hc-i5n"/>
+                            <constraint firstItem="Smv-GI-uPx" firstAttribute="top" secondItem="Wo6-VT-3uf" secondAttribute="bottom" constant="32" id="XYz-pV-aai"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cornerButton" destination="Wo6-VT-3uf" id="e5o-FY-pW9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z6G-Hg-ikR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2719" y="288"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZDX-zr-ufa">

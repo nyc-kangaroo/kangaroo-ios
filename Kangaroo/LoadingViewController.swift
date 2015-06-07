@@ -17,6 +17,9 @@ class LoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationManager = CLLocationManager()
+        locationManager?.startUpdatingLocation()
+        
         GMSPlacesClient.sharedClient().currentPlaceWithCallback { (possiblePlaces, error) -> Void in
             if let error = error {
                 println("Error retrieving places: \(error.localizedDescription)")

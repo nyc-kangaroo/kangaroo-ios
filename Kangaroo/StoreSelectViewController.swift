@@ -15,6 +15,7 @@ class StoreSelectViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet var tableView: UITableView!
     
     var stores: [GMSPlace]?
+    var storeToSend: GMSPlace?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,24 @@ class StoreSelectViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("StoreCell", forIndexPath: indexPath) as! StoreCell
         
+        if let stores = stores {
+            cell.configureWithPlace(stores[indexPath.row], logo: UIImage(named: "Grocery")!)
+        }
+        
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        self.storeToSend = self.stores![indexPath.row]
+        self.performSegueWithIdentifier("storeSegue", sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? StoreViewController {
+            vc.store = self.storeToSend
+        }
     }
     
     override func prefersStatusBarHidden() -> Bool {
