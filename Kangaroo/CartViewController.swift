@@ -31,6 +31,13 @@ class CartViewController: UIViewController, PKPaymentAuthorizationViewController
         self.tableView.tableFooterView = UIView.new()
         
         self.checkoutButton.backgroundColor = UIColor(red: 33/255, green: 34/255, blue: 35/255, alpha: 1)
+        
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: "deleteProduct:", name: "KGDeleteProduct", object: nil)
+    }
+    
+    func deleteProduct(notification: NSNotification) {
+        println(notification.object)
     }
     
     @IBAction func backButton(sender: AnyObject) {
@@ -63,16 +70,16 @@ class CartViewController: UIViewController, PKPaymentAuthorizationViewController
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return ShoppingCart.sharedInstance().getProducts().count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCellWithIdentifier("ProductCell", forIndexPath: indexPath) as? ProductCell {
-            return cell
-        } else {
-            println("Error with table view cell identifier")
-            return UITableViewCell()
-        }
+        let product = ShoppingCart.sharedInstance().getProducts()[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("ProductCell", forIndexPath: indexPath) as! ProductCell
+        cell.configureWithProduct(product)
+        
+        return cell
     }
     
     override func prefersStatusBarHidden() -> Bool {

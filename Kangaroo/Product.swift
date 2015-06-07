@@ -8,12 +8,13 @@
 
 import SwiftyJSON
 
-struct Product {
+class Product {
     
     var upc: Int?
     var name: String?
     var imageUrl: String?
     var price: Float?
+    var quantity = 0
     
     init(json: JSON) {
         if let upc = json["UPC"].int {

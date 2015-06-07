@@ -57,7 +57,7 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
         let request = NSURLRequest(URL: url)
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
-            let json = JSON(data)
+            let json = JSON(data: data)
             let store = Store(json: json, place: place)
             self.stores?.append(store)
             

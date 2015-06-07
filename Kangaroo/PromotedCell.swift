@@ -20,6 +20,8 @@ class PromotedCell: UITableViewCell {
     @IBOutlet var productName: UILabel!
     @IBOutlet var priceLabel: UILabel!
     
+    var product: Product?
+    
     override func awakeFromNib() {
         self.bottomRightView.backgroundColor = UIColor(red: 70/255, green: 70/255, blue: 70/255, alpha: 1)
         
@@ -28,5 +30,12 @@ class PromotedCell: UITableViewCell {
     
     func configureWithProduct(product: Product) {
         
+    }
+    
+    @IBAction func addButton(sender: AnyObject) {
+        if let product = self.product {
+            let notificationCenter = NSNotificationCenter.defaultCenter()
+            notificationCenter.postNotificationName("KGAddProduct", object: product)
+        }
     }
 }

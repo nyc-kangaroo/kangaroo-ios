@@ -14,6 +14,7 @@
 		EB8BFD2A1B234EB400C3D4B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB8BFD291B234EB400C3D4B9 /* Images.xcassets */; };
 		EB8BFD2D1B234EB400C3D4B9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB8BFD2B1B234EB400C3D4B9 /* LaunchScreen.xib */; };
 		EB8BFD391B234EB400C3D4B9 /* KangarooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8BFD381B234EB400C3D4B9 /* KangarooTests.swift */; };
+		EBA035DD1B242986005D15D4 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA035DC1B242986005D15D4 /* ShoppingCart.swift */; };
 		EBB415521B23846D00050DFC /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415511B23846D00050DFC /* LoadingViewController.swift */; };
 		EBB415541B238BBA00050DFC /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415531B238BBA00050DFC /* ColorConstants.swift */; };
 		EBB415561B2393F800050DFC /* StoreSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415551B2393F800050DFC /* StoreSelectViewController.swift */; };
@@ -26,6 +27,7 @@
 		EBB415661B24049B00050DFC /* Mozart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415651B24049B00050DFC /* Mozart.swift */; };
 		EBB415681B24062A00050DFC /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415671B24062A00050DFC /* CartViewController.swift */; };
 		EBB4156A1B24089800050DFC /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415691B24089800050DFC /* ProductCell.swift */; };
+		EBCA525F1B24471F00760CA1 /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA525E1B24471F00760CA1 /* BarcodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,7 @@
 		EB8BFD321B234EB400C3D4B9 /* KangarooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KangarooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB8BFD371B234EB400C3D4B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB8BFD381B234EB400C3D4B9 /* KangarooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KangarooTests.swift; sourceTree = "<group>"; };
+		EBA035DC1B242986005D15D4 /* ShoppingCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
 		EBB415511B23846D00050DFC /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		EBB415531B238BBA00050DFC /* ColorConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 		EBB415551B2393F800050DFC /* StoreSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreSelectViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +68,7 @@
 		EBB415671B24062A00050DFC /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		EBB415691B24089800050DFC /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		EBB4156B1B2419E200050DFC /* Kangaroo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Kangaroo.entitlements; sourceTree = "<group>"; };
+		EBCA525E1B24471F00760CA1 /* BarcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 				EBB415551B2393F800050DFC /* StoreSelectViewController.swift */,
 				EBB4155C1B23BB0200050DFC /* StoreViewController.swift */,
 				EBB415671B24062A00050DFC /* CartViewController.swift */,
+				EBCA525E1B24471F00760CA1 /* BarcodeViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 			children = (
 				EBB4155F1B23D3E300050DFC /* Store.swift */,
 				EBB415611B23D40C00050DFC /* Product.swift */,
+				EBA035DC1B242986005D15D4 /* ShoppingCart.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -360,11 +366,13 @@
 				EBB415561B2393F800050DFC /* StoreSelectViewController.swift in Sources */,
 				EBB415601B23D3E300050DFC /* Store.swift in Sources */,
 				EB8BFD231B234EB400C3D4B9 /* AppDelegate.swift in Sources */,
+				EBCA525F1B24471F00760CA1 /* BarcodeViewController.swift in Sources */,
 				EBB4156A1B24089800050DFC /* ProductCell.swift in Sources */,
 				EBB415521B23846D00050DFC /* LoadingViewController.swift in Sources */,
 				EBB415681B24062A00050DFC /* CartViewController.swift in Sources */,
 				EBB415541B238BBA00050DFC /* ColorConstants.swift in Sources */,
 				EBB415641B23F42200050DFC /* PromotedCell.swift in Sources */,
+				EBA035DD1B242986005D15D4 /* ShoppingCart.swift in Sources */,
 				EBB415661B24049B00050DFC /* Mozart.swift in Sources */,
 				EBB415621B23D40C00050DFC /* Product.swift in Sources */,
 				EBB415591B2399F800050DFC /* StoreCell.swift in Sources */,

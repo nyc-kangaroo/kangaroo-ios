@@ -16,7 +16,7 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet var tableView: UITableView!
     @IBOutlet var cornerButton: UIButton!
     
-    var store: Store?
+    var store: Store!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,14 +38,36 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.cornerButton.layer.shadowOffset = CGSizeMake(0, 4)
         self.cornerButton.layer.shadowColor = UIColor.blackColor().CGColor
         self.cornerButton.layer.shadowOpacity = 0.9
+        
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: "addItemToCart:", name: "KGAddProduct", object: nil)
+        notificationCenter.addObserver(self, selector: "processBarcode:", name: "KGFoundBarcode", object: nil)
     }
     
-    @IBAction func searchButton(sender: AnyObject) {
-        
+    func addItemToCart(notification: NSNotification) {
+        if let product = notification.object as? Product {
+            ShoppingCart.sharedInstance().addProduct(product)
+            println(ShoppingCart.sharedInstance().getProducts().count)
+        }
+    }
+    
+    func processBarcode(notification: NSNotification) {
+        if let barcode = notification.object as? String {
+            if let products = self.store.products {
+                for product in products {
+                    if product.upc == barcode.toInt()! {
+                        
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func barcodeButton(sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let bvc = storyboard.instantiateViewControllerWithIdentifier("BarcodeViewController") as! BarcodeViewController
         
+        self.presentViewController(bvc, animated: true, completion: nil)
     }
     
     @IBAction func cartButton(sender: AnyObject) {
@@ -53,13 +75,13 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if let store = store {
-//            if let promoted = store.promoted {
-//                return promoted.count
-//            }
-//        }
+        if let store = store {
+            if let promoted = store.promoted {
+                return promoted.count
+            }
+        }
         
-        return 2
+        return 0
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -69,6 +91,11 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCellWithIdentifier("PromotedCell", forIndexPath: indexPath) as? PromotedCell {
+            
+            if let store = store {
+                cell.product = store.products![indexPath.row]
+            }
+            
             return cell
         } else {
             println("Error retrieving UITableViewCell type")

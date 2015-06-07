@@ -17,6 +17,7 @@ struct Store {
     var promoted: [Int]?
     
     init(json: JSON, place: GMSPlace) {
+        println(json)
         self.place = place
         
         if let imageUrl = json["imageUrl"].string {
@@ -32,8 +33,10 @@ struct Store {
             }
         }
         
-        if let promoted = json["promoted"].arrayObject {
-            self.promoted = promoted as? [Int]
+        println(json)
+        
+        if let promoted = json["promoted"].arrayObject as? [Int] {
+            self.promoted = promoted
         }
     }
 }
