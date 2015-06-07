@@ -4,5 +4,6 @@ use_frameworks!
 
 pod 'EstimoteSDK', '~> 3.2'
 pod 'GoogleMaps', '~> 1.10'
+pod 'MBProgressHUD', '~> 0.9'
 pod 'MTBBarcodeScanner', '~> 1.6'
 pod 'SwiftyJSON', '~> 2.2'

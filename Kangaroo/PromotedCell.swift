@@ -24,12 +24,22 @@ class PromotedCell: UITableViewCell {
     
     override func awakeFromNib() {
         self.bottomRightView.backgroundColor = UIColor(red: 70/255, green: 70/255, blue: 70/255, alpha: 1)
-        
-        Mozart.load("http://puu.sh/ifoA4/3215817322.png").into(productImage)
     }
     
     func configureWithProduct(product: Product) {
+        self.product = product
         
+        if let name = product.name {
+            self.productName.text = name
+        }
+        
+        if let imageUrl = product.imageUrl {
+            Mozart.load(imageUrl).into(self.productImage)
+        }
+        
+        if let price = product.price {
+            self.priceLabel.text = "$\(price)"
+        }
     }
     
     @IBAction func addButton(sender: AnyObject) {

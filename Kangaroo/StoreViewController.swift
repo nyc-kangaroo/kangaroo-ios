@@ -8,6 +8,7 @@
 
 import GoogleMaps
 import Foundation
+import MBProgressHUD
 import UIKit
 
 class StoreViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -17,12 +18,12 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet var cornerButton: UIButton!
     
     var store: Store!
+    var promotedProducts: [Product]!
+    
+    var hud: MBProgressHUD!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
         
         self.tableView.backgroundColor = UIColor.darkKangarooColor()
        
@@ -42,21 +43,50 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "addItemToCart:", name: "KGAddProduct", object: nil)
         notificationCenter.addObserver(self, selector: "processBarcode:", name: "KGFoundBarcode", object: nil)
+        
+        self.promotedProducts = [Product]()
+        
+        if let store = store {
+            if let products = store.products {
+                if let promoted = store.promoted {
+                    for product in products {
+                        if contains(promoted, product.upc!) {
+                            self.promotedProducts.append(product)
+                        }
+                    }
+                }
+            }
+        }
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
     
     func addItemToCart(notification: NSNotification) {
+        self.hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        self.hud.mode = .Text
+        self.hud.labelText = "Added to Cart"
+        
+        let timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "hideHUD", userInfo: nil, repeats: false)
+        NSRunLoop.mainRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+        
         if let product = notification.object as? Product {
             ShoppingCart.sharedInstance().addProduct(product)
             println(ShoppingCart.sharedInstance().getProducts().count)
         }
     }
     
+    func hideHUD() {
+        self.hud.hide(true)
+    }
+    
     func processBarcode(notification: NSNotification) {
         if let barcode = notification.object as? String {
             if let products = self.store.products {
                 for product in products {
-                    if product.upc == barcode.toInt()! {
-                        
+                    if product.upc == barcode {
+                        println("\(barcode)")
+                        break
                     }
                 }
             }
@@ -64,6 +94,9 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     @IBAction func barcodeButton(sender: AnyObject) {
+//        let alert = KangarooAlertView(viewController: self)
+//        self.view.addSubview(alert)
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let bvc = storyboard.instantiateViewControllerWithIdentifier("BarcodeViewController") as! BarcodeViewController
         
@@ -75,13 +108,7 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let store = store {
-            if let promoted = store.promoted {
-                return promoted.count
-            }
-        }
-        
-        return 0
+        return self.promotedProducts.count
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -92,9 +119,8 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCellWithIdentifier("PromotedCell", forIndexPath: indexPath) as? PromotedCell {
             
-            if let store = store {
-                cell.product = store.products![indexPath.row]
-            }
+            let product = self.promotedProducts[indexPath.row]
+            cell.configureWithProduct(product)
             
             return cell
         } else {

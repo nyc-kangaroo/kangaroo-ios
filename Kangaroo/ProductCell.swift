@@ -40,13 +40,27 @@ class ProductCell: UITableViewCell {
     }
     
     @IBAction func decreaseQuantity(sender: AnyObject) {
-        self.product.quantity -= 1
-        self.quantityLabel.text = "\(self.product.quantity)"
+        if self.product.quantity != 0 {
+            self.product.quantity -= 1
+            self.quantityLabel.text = "\(self.product.quantity)"
+            
+            let price = self.product.price! * Float(self.product.quantity)
+            self.priceLabel.text = "$\(price)"
+        }
+        
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.postNotificationName("KGPriceUpdated", object: nil)
     }
     
     @IBAction func increaseQuantity(sender: AnyObject) {
         self.product.quantity += 1
         self.quantityLabel.text = "\(self.product.quantity)"
+        
+        let price = self.product.price! * Float(self.product.quantity)
+        self.priceLabel.text = "$\(price)"
+        
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.postNotificationName("KGPriceUpdated", object: nil)
     }
     
     @IBAction func trashButton(sender: AnyObject) {

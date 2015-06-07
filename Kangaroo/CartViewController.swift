@@ -34,10 +34,23 @@ class CartViewController: UIViewController, PKPaymentAuthorizationViewController
         
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "deleteProduct:", name: "KGDeleteProduct", object: nil)
+        notificationCenter.addObserver(self, selector: "updatePrice:", name: "KGPriceUpdated", object: nil)
     }
     
     func deleteProduct(notification: NSNotification) {
         println(notification.object)
+    }
+    
+    func updatePrice(notification: NSNotification) {
+        var price = 0.0
+        
+        for product in ShoppingCart.sharedInstance().getProducts() {
+            price += Double(product.price! * Float(product.quantity))
+        }
+        
+        price = round(price * 100) / 100
+        
+        self.priceLabel.text = "$\(price)"
     }
     
     @IBAction func backButton(sender: AnyObject) {
@@ -51,7 +64,22 @@ class CartViewController: UIViewController, PKPaymentAuthorizationViewController
         request.merchantCapabilities = PKMerchantCapability.Capability3DS
         request.merchantIdentifier = "merchant.nyc.jackcook.Kangaroo"
         
-        let objects = [PKPaymentSummaryItem(label: "Subtotal", amount: 12.73)]
+        var objects = [PKPaymentSummaryItem]()
+        
+        var total: Float = 0.0
+        
+        for product in ShoppingCart.sharedInstance().getProducts() {
+            let price = round(product.price! * Float(product.quantity) * 100) / 100
+            let decimal = NSDecimalNumber(float: price)
+            
+            total += price
+            
+            let summaryItem = PKPaymentSummaryItem(label: product.name!, amount: decimal)
+            objects.append(summaryItem)
+        }
+        
+        let totalItem = PKPaymentSummaryItem(label: "Kangaroo", amount: NSDecimalNumber(float: total))
+        objects.append(totalItem)
         
         request.paymentSummaryItems = objects
         request.supportedNetworks = [PKPaymentNetworkVisa]

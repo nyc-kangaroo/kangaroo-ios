@@ -14,10 +14,9 @@ struct Store {
     var place: GMSPlace?
     var imageUrl: String?
     var products: [Product]?
-    var promoted: [Int]?
+    var promoted: [String]?
     
     init(json: JSON, place: GMSPlace) {
-        println(json)
         self.place = place
         
         if let imageUrl = json["imageUrl"].string {
@@ -33,9 +32,7 @@ struct Store {
             }
         }
         
-        println(json)
-        
-        if let promoted = json["promoted"].arrayObject as? [Int] {
+        if let promoted = json["promoted"].arrayObject as? [String] {
             self.promoted = promoted
         }
     }

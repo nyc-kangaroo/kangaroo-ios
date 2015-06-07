@@ -19,6 +19,18 @@ class ShoppingCart {
     internal var products = [Product]()
     
     func addProduct(product: Product) {
+        var i = 0
+        for p in self.products {
+            if p.upc == product.upc {
+                self.products[i].quantity += 1
+                return
+            }
+            
+            i += 1
+        }
+        
+        product.quantity = 1
+        
         self.products.append(product)
     }
     

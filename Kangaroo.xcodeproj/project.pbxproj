@@ -28,6 +28,7 @@
 		EBB415681B24062A00050DFC /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415671B24062A00050DFC /* CartViewController.swift */; };
 		EBB4156A1B24089800050DFC /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB415691B24089800050DFC /* ProductCell.swift */; };
 		EBCA525F1B24471F00760CA1 /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA525E1B24471F00760CA1 /* BarcodeViewController.swift */; };
+		EBEBD76F1B2452550068CB98 /* KangarooAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBD76E1B2452550068CB98 /* KangarooAlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		EBB415691B24089800050DFC /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		EBB4156B1B2419E200050DFC /* Kangaroo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Kangaroo.entitlements; sourceTree = "<group>"; };
 		EBCA525E1B24471F00760CA1 /* BarcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
+		EBEBD76E1B2452550068CB98 /* KangarooAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KangarooAlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				EBB415581B2399F800050DFC /* StoreCell.swift */,
 				EBB415631B23F42200050DFC /* PromotedCell.swift */,
 				EBB415691B24089800050DFC /* ProductCell.swift */,
+				EBEBD76E1B2452550068CB98 /* KangarooAlertView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				EBB415681B24062A00050DFC /* CartViewController.swift in Sources */,
 				EBB415541B238BBA00050DFC /* ColorConstants.swift in Sources */,
 				EBB415641B23F42200050DFC /* PromotedCell.swift in Sources */,
+				EBEBD76F1B2452550068CB98 /* KangarooAlertView.swift in Sources */,
 				EBA035DD1B242986005D15D4 /* ShoppingCart.swift in Sources */,
 				EBB415661B24049B00050DFC /* Mozart.swift in Sources */,
 				EBB415621B23D40C00050DFC /* Product.swift in Sources */,

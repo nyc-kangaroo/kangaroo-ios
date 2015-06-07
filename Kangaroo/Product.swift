@@ -10,14 +10,14 @@ import SwiftyJSON
 
 class Product {
     
-    var upc: Int?
+    var upc: String?
     var name: String?
     var imageUrl: String?
     var price: Float?
     var quantity = 0
     
     init(json: JSON) {
-        if let upc = json["UPC"].int {
+        if let upc = json["UPC"].string {
             self.upc = upc
         }
         
