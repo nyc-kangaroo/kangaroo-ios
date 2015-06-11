@@ -29,7 +29,7 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
         
         GMSPlacesClient.sharedClient().currentPlaceWithCallback { (possiblePlaces, error) -> Void in
             if let error = error {
-                println("Error retrieving places: \(error.localizedDescription)")
+                print("Error retrieving places: \(error.localizedDescription)")
                 return
             }
             
@@ -40,8 +40,7 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
                 for possiblePlace in possiblePlaces.likelihoods {
                     if let possiblePlace = possiblePlace as? GMSPlaceLikelihood {
                         let place = possiblePlace.place
-                        
-                        if contains(place.types as! [String], "grocery_or_supermarket") {
+                        if (place.types as! [String]).contains("grocery_or_supermarket") {
                             places.append(place)
                             self.potentialRequests += 1
                             self.getPlaceInfo(place)
@@ -57,7 +56,7 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
         let request = NSURLRequest(URL: url)
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
-            let json = JSON(data: data)
+            let json = JSON(data: data!)
             let store = Store(json: json, place: place)
             self.stores?.append(store)
             
@@ -65,7 +64,7 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
         })
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [AnyObject]) {
         self.finishedRequest()
         kangarooLocationManager?.stopUpdatingLocation()
         kangarooLocationManager?.delegate = nil
@@ -91,7 +90,7 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
         } else if let vc = segue.destinationViewController as? StoreViewController {
             vc.store = self.stores?.first
         } else {
-            println("Error: Unknown segue - \(segue.identifier)")
+            print("Error: Unknown segue - \(segue.identifier)")
         }
     }
     

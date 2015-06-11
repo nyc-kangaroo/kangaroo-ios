@@ -45,7 +45,7 @@ class LoadingClass {
         self.url = url
         
         getImage() { (img) -> Void in
-            if let cb = self.completionBlock {
+            if let _ = self.completionBlock {
                 self.completionBlock(img)
             }
             
@@ -105,13 +105,13 @@ class LoadingClass {
         let request = NSURLRequest(URL: actualUrl)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
             if error == nil {
-                let image = UIImage(data: data)!
+                let image = UIImage(data: data!)!
                 block(image)
                 if (self.completionBlock != nil) {
                     self.completionBlock(image)
                 }
             } else {
-                println("Error: \(error.localizedDescription)")
+                print("Error: \(error?.localizedDescription)")
             }
         }
     }

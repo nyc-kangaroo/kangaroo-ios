@@ -49,15 +49,11 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         self.promotedProducts = [Product]()
         
-        if let store = store {
-            if let products = store.products {
-                if let promoted = store.promoted {
-                    for product in products {
-                        if contains(promoted, product.upc!) {
-                            self.promotedProducts.append(product)
-                        }
-                    }
-                }
+        if let store = store,
+            products = store.products,
+            promoted = store.promoted {
+            for product in products where promoted.contains(product.upc!) {
+                self.promotedProducts.append(product)
             }
         }
         
@@ -84,7 +80,7 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func processBarcode(notification: NSNotification) {
         if let barcode = notification.object as? String {
-            println("\(barcode)")
+            print("\(barcode)")
             if let products = self.store.products {
                 for product in products {
                     if product.upc == barcode {
@@ -128,7 +124,7 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             return cell
         } else {
-            println("Error retrieving UITableViewCell type")
+            print("Error retrieving UITableViewCell type")
             return UITableViewCell()
         }
     }
@@ -137,7 +133,7 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         if let vc = segue.destinationViewController as? CartViewController {
             vc.store = store
         } else {
-            println("Error: Unknown segue identifier: \(segue.identifier)")
+            print("Error: Unknown segue identifier: \(segue.identifier)")
         }
     }
     

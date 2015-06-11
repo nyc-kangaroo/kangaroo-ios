@@ -48,7 +48,7 @@ class CartViewController: UIViewController, PKPaymentAuthorizationViewController
             ShoppingCart.sharedInstance().removeProductAtIndex(index)
             self.tableView.reloadData()
         } else {
-            println("Error retrieving item index")
+            print("Error retrieving item index")
         }
     }
     
@@ -111,7 +111,7 @@ class CartViewController: UIViewController, PKPaymentAuthorizationViewController
         self.presentViewController(self.payController!, animated: true, completion: nil)
     }
     
-    func paymentAuthorizationViewController(controller: PKPaymentAuthorizationViewController!, didAuthorizePayment payment: PKPayment!, completion: ((PKPaymentAuthorizationStatus) -> Void)!) {
+    func paymentAuthorizationViewController(controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, completion: ((PKPaymentAuthorizationStatus) -> Void)) {
         let url = "http://45.33.83.229:3001/checkout/\(self.store.place!.name)/\(ShoppingCart.sharedInstance().getProducts()[0].quantity)"
         let encodedUrlString = url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         let encodedUrl = NSURL(string: encodedUrlString)!
@@ -120,7 +120,7 @@ class CartViewController: UIViewController, PKPaymentAuthorizationViewController
         request.HTTPMethod = "GET"
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
-            for product in ShoppingCart.sharedInstance().getProducts() {
+            for _ in ShoppingCart.sharedInstance().getProducts() {
                 ShoppingCart.sharedInstance().removeProductAtIndex(0)
             }
             
@@ -130,7 +130,7 @@ class CartViewController: UIViewController, PKPaymentAuthorizationViewController
         }
     }
     
-    func paymentAuthorizationViewControllerDidFinish(controller: PKPaymentAuthorizationViewController!) {
+    func paymentAuthorizationViewControllerDidFinish(controller: PKPaymentAuthorizationViewController) {
         self.payController!.dismissViewControllerAnimated(true, completion: nil)
     }
     
