@@ -37,15 +37,10 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
             var places = [GMSPlace]()
             
             if let possiblePlaces = possiblePlaces {
-                for possiblePlace in possiblePlaces.likelihoods {
-                    if let possiblePlace = possiblePlace as? GMSPlaceLikelihood {
-                        let place = possiblePlace.place
-                        if (place.types as! [String]).contains("grocery_or_supermarket") {
-                            places.append(place)
-                            self.potentialRequests += 1
-                            self.getPlaceInfo(place)
-                        }
-                    }
+                for possiblePlace in possiblePlaces.likelihoods as [GMSPlaceLikelihood] where (possiblePlace.place.types as! [String]).contains("grocery_or_supermarket") {
+                    places.append(possiblePlace.place)
+                    self.potentialRequests += 1
+                    self.getPlaceInfo(possiblePlace.place)
                 }
             }
         }

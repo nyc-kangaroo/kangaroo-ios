@@ -79,24 +79,17 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func processBarcode(notification: NSNotification) {
-        if let barcode = notification.object as? String {
-            print("\(barcode)")
-            if let products = self.store.products {
-                for product in products {
-                    if product.upc == barcode {
-                        ShoppingCart.sharedInstance().addProduct(product)
-                        self.performSegueWithIdentifier("cartSegue", sender: nil)
-                        break
-                    }
-                }
+        if let barcode = notification.object as? String,
+        let products = self.store.products {
+            for product in products where product.upc == barcode {
+                ShoppingCart.sharedInstance().addProduct(product)
+                self.performSegueWithIdentifier("cartSegue", sender: nil)
+                break
             }
         }
     }
     
     @IBAction func barcodeButton(sender: AnyObject) {
-//        let alert = KangarooAlertView(viewController: self)
-//        self.view.addSubview(alert)
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let bvc = storyboard.instantiateViewControllerWithIdentifier("BarcodeViewController") as! BarcodeViewController
         
