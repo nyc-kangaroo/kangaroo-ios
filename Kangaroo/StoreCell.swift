@@ -27,14 +27,14 @@ class StoreCell: UITableViewCell {
         self.icon.image = UIImage(named: "Grocery")
         self.type.text = "grocery"
         
-        if let locationManager = kangarooLocationManager {
-            if let place = store.place {
-                let location = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-                let distance = locationManager.location!.distanceFromLocation(location)
-                let rounded = Int(round(distance / 0.9144))
-                
-                self.distance.text = "\(rounded) yds"
-            }
+        guard let locationManager = kangarooLocationManager, let place = store.place else {
+            return
         }
+        
+        let location = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+        let distance = locationManager.location!.distanceFromLocation(location)
+        let rounded = Int(round(distance / 0.9144))
+        
+        self.distance.text = "\(rounded) yds"
     }
 }

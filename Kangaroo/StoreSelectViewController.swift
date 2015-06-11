@@ -38,12 +38,11 @@ class StoreSelectViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let stores = stores {
-            return stores.count
-        } else {
-            print("Error retrieving stores")
+        guard let stores = stores else {
             return 0
         }
+        
+        return stores.count
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

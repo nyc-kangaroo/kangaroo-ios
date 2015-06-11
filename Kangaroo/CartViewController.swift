@@ -44,12 +44,13 @@ class CartViewController: UIViewController, PKPaymentAuthorizationViewController
     }
     
     func deleteProduct(notification: NSNotification) {
-        if let index = notification.object as? Int {
-            ShoppingCart.sharedInstance().removeProductAtIndex(index)
-            self.tableView.reloadData()
-        } else {
+        guard let index = notification.object as? Int else {
             print("Error retrieving item index")
+            return
         }
+        
+        ShoppingCart.sharedInstance().removeProductAtIndex(index)
+        self.tableView.reloadData()
     }
     
     func updatePrice(notification: NSNotification?) {

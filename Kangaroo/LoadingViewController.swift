@@ -36,12 +36,14 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
             self.stores = [Store]()
             var places = [GMSPlace]()
             
-            if let possiblePlaces = possiblePlaces {
-                for possiblePlace in possiblePlaces.likelihoods as [GMSPlaceLikelihood] where (possiblePlace.place.types as! [String]).contains("grocery_or_supermarket") {
-                    places.append(possiblePlace.place)
-                    self.potentialRequests += 1
-                    self.getPlaceInfo(possiblePlace.place)
-                }
+            guard let unwrappedPlaces = possiblePlaces else {
+                return
+            }
+            
+            for possiblePlace in unwrappedPlaces.likelihoods as! [GMSPlaceLikelihood] where (possiblePlace.place.types as! [String]).contains("grocery_or_supermarket") {
+                places.append(possiblePlace.place)
+                self.potentialRequests += 1
+                self.getPlaceInfo(possiblePlace.place)
             }
         }
     }
@@ -68,13 +70,12 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
     func finishedRequest() {
         self.finishedRequests += 1
         
-        if self.potentialRequests == self.finishedRequests {
-            if let stores = stores {
-                if stores.count > 1 {
-                    self.performSegueWithIdentifier("storeSelectSegue", sender: nil)
-                } else {
-                    self.performSegueWithIdentifier("storeSegue", sender: nil)
-                }
+        if self.potentialRequests == self.finishedRequests,
+            let stores = stores {
+            if stores.count > 1 {
+                self.performSegueWithIdentifier("storeSelectSegue", sender: nil)
+            } else {
+                self.performSegueWithIdentifier("storeSegue", sender: nil)
             }
         }
     }

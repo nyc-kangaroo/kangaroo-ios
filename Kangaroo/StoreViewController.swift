@@ -69,9 +69,11 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         let timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "hideHUD", userInfo: nil, repeats: false)
         NSRunLoop.mainRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
         
-        if let product = notification.object as? Product {
-            ShoppingCart.sharedInstance().addProduct(product)
+        guard let product = notification.object as? Product else {
+            return
         }
+        
+        ShoppingCart.sharedInstance().addProduct(product)
     }
     
     func hideHUD() {
@@ -79,13 +81,14 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func processBarcode(notification: NSNotification) {
-        if let barcode = notification.object as? String,
-        let products = self.store.products {
-            for product in products where product.upc == barcode {
-                ShoppingCart.sharedInstance().addProduct(product)
-                self.performSegueWithIdentifier("cartSegue", sender: nil)
-                break
-            }
+        guard let barcode = notification.object as? String, products = self.store.products else {
+            return
+        }
+        
+        for product in products where product.upc == barcode {
+            ShoppingCart.sharedInstance().addProduct(product)
+            self.performSegueWithIdentifier("cartSegue", sender: nil)
+            break
         }
     }
     
@@ -110,16 +113,12 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCellWithIdentifier("PromotedCell", forIndexPath: indexPath) as? PromotedCell {
-            
-            let product = self.promotedProducts[indexPath.row]
-            cell.configureWithProduct(product)
-            
-            return cell
-        } else {
+        guard let cell = tableView.dequeueReusableCellWithIdentifier("PromotedCell", forIndexPath: indexPath) as? PromotedCell else {
             print("Error retrieving UITableViewCell type")
             return UITableViewCell()
         }
+        
+        return cell
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
